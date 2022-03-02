@@ -9,7 +9,7 @@ const showTasks = async () => {
   try {
     const {
       data: { data:{task} },
-    } = await axios.get('https://task-manager-30.herokuapp.com/api/v1/tasks')
+    } = await axios.get('/api/v1/tasks')
     if (task.length < 1) {
       tasksDOM.innerHTML = '<h5 class="empty-list">No tasks in your list</h5>'
       loadingDOM.style.visibility = 'hidden'
@@ -51,7 +51,7 @@ tasksDOM.addEventListener('click', async (e) => {
     loadingDOM.style.visibility = 'visible'
     const id = el.parentElement.dataset.id
     try {
-      await axios.delete(`https://task-manager-30.herokuapp.com/api/v1/tasks/${id}`)
+      await axios.delete(`/api/v1/tasks/${id}`)
       showTasks()
     } catch (error) {
       console.log(error)
@@ -66,7 +66,7 @@ formDOM.addEventListener('submit', async (e) => {
   e.preventDefault()
   const name = taskInputDOM.value
   try {
-    await axios.post('https://task-manager-30.herokuapp.com/api/v1/tasks', { name })
+    await axios.post('/api/v1/tasks', { name })
     showTasks()
     taskInputDOM.value = ''
     formAlertDOM.style.display = 'block'
