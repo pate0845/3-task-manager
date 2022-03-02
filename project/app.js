@@ -7,7 +7,6 @@ const notfound=require('./middleware/not-found')
 
 //middleware
 app.use(express.json())
-app.use(express.static('./public'))
 
 //app.get('/api/v1/tasks')             -get all the tasks
 //app.post('/api/v1/tasks')            -create a new task
