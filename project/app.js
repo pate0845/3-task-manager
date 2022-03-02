@@ -4,7 +4,6 @@ const tasks=require('./routes/tasks')
 const connectDB=require('./db/connect');
 require('dotenv').config();
 const notfound=require('./middleware/not-found')
-const path=require('path');
 
 //middleware
 app.use(express.json())
