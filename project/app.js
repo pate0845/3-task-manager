@@ -17,7 +17,7 @@ app.use(express.static('./public'))
 
 //routes
 
-app.use('/api/v1/tasks',tasks);
+app.use(__dirname+'/api/v1/tasks',tasks);
 
 //middleware executed if no route present
 app.use(notfound)
