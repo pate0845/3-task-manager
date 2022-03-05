@@ -9,7 +9,7 @@ const showTasks = async () => {
   try {
     const {
       data: { data:{task} },
-    } = await axios.get('https://task-manager-30.herokuapp.com/api/v1/tasks')
+    } = await axios.get('/api/v1/tasks')
     if (task.length < 1) {
       tasksDOM.innerHTML = '<h5 class="empty-list">No tasks in your list</h5>'
       loadingDOM.style.visibility = 'hidden'
