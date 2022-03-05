@@ -17,7 +17,7 @@ app.use(express.static('./public'))
 
 //routes
 
-app.use(__dirname+'/api/v1/tasks',tasks);
+app.use('/https://task-manager-30.herokuapp.com/api/v1/tasks',tasks);
 
 //middleware executed if no route present
 app.use(notfound)
